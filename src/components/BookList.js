@@ -9,16 +9,11 @@ class BookList extends React.Component {
   {
     fetchBooks(this.props.dispatch);
   }
-  constructor(props)
-  {
-    super(props);
-    console.log(props);
-  }
   render() {
       if(!this.props.Booklist)
       return (
-        <div className="container">
-          <img src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif" className="center img-rounded"/>
+        <div className="row">
+          <img src="https://cdn.dribbble.com/users/359314/screenshots/2379673/untitled-3.gif" />
         </div>
     );
       const Items=this.props.Booklist.slice(0,20).map(
@@ -32,7 +27,7 @@ class BookList extends React.Component {
         <div className="row">
             <div className="col-sm-8">
               <h1 className="text-success">Book List</h1>
-              <hr/>  
+              <hr/>
               <div className="card-columns">
                 {Items}
               </div>
@@ -40,7 +35,7 @@ class BookList extends React.Component {
           <div className="col-sm-4">
             <h1 className="text-info">Book Details</h1>
             <hr/>
-            <BookDetail/>
+            
           </div>
           </div>
       );
@@ -48,7 +43,8 @@ class BookList extends React.Component {
 
 }
 const mapStateToProps=state=>
-({
-  Booklist:state.BookList.Items
-})
+  ({
+    Booklist:state.Books.Items
+  })
+
 export default connect(mapStateToProps)(BookList)

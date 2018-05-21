@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {BOOKS_URL} from '../constants'
 import {connect} from 'react-redux'
 import {getImageUrl} from '../constants'
 class BookDetail extends Component {

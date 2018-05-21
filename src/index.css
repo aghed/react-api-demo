@@ -5,4 +5,8 @@ body {
 }
 .card{
   margin-bottom: 5px;
+  cursor: pointer;
+}
+hr{
+  border: 1px solid lightblue;
 }

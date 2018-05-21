@@ -1,8 +1,9 @@
 import React from 'react';
-import {BASE_URL} from '../constants'
 import {fetchBookById} from '../actions'
 import {store} from '../App'
 import {getImageUrl} from '../constants'
+
+import {addToReadlater} from '../actions'
 export default class Book extends React.Component {
   constructor(props)
   {
@@ -26,9 +27,13 @@ export default class Book extends React.Component {
       </div>
         <div className="card-body">
           <p className="card-text">{Book.Description.substring(0,80)+'....'}</p>
+          <button type="button" className="btn btn-warn" onClick={this.addtoReadMe(Book)}>Add To Read Later</button>
         </div>
     </div>);
 
   }
-
+  addtoReadMe(Book)
+  {
+    addToReadlater(Book,store.dispatch);
+  }
 }
